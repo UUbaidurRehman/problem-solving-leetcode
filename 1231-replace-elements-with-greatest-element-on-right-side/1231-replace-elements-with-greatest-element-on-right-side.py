@@ -1,9 +1,8 @@
 class Solution:
     def replaceElements(self, arr: List[int]) -> List[int]:
-        length = len(arr)
-        # print(length)
+        l = len(arr)
         mx= -1
-        for i in range(length)[::-1]:
+        for i in range(l)[::-1]:
             temp = arr[i]
             arr[i] = mx
             if temp> mx:
