@@ -5,6 +5,6 @@ class Solution:
         temp = x
         num= 0
         while (temp > 0):
-            num = num*10 + (temp % 10)
+            num = num*10 + temp % 10
             temp = temp//10
         return x == num 
