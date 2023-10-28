@@ -1,10 +1,9 @@
 class Solution:
     def daysBetweenDates(self, date1: str, date2: str) -> int:
         def calc_Days(date):
-            stnd_year = 1900
             days = 0
             year, month, day = map(int,date.split('-'))
-            for y in range(stnd_year, year):
+            for y in range(1900, year):
                 days +=  365
                 if ( y%4 == 0):
                     if y%100 != 0 or (y%100==0 and y%400==0):
