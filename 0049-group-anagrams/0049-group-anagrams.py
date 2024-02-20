@@ -3,8 +3,14 @@ class Solution:
         anagrams = defaultdict(list)
         
         for s in strs:
-            sorted_word = ''.join(sorted(s))
 
-            anagrams[sorted_word].append(s)
+            count = [0]* 26
+            for c in s:
+                count[ ord(c) - ord('a')] +=1
+            anagrams[tuple(count)].append(s)
+        return anagrams.values()
+
+        #     sorted_word = ''.join(sorted(s))
+        #     anagrams[sorted_word].append(s)
             
-        return list(anagrams.values())
+        # return list(anagrams.values())
