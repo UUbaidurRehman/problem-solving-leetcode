@@ -11,3 +11,13 @@ class Solution:
                     l +=1
             else: l += 1
             r +=1
+
+        # snowball = 0 
+        # for i in range (len(nums)):
+        #     if nums[i] == 0 :
+        #         snowball +=1
+        #     elif snowball > 0:
+        #         t = nums[i]
+        #         nums[i] = 0 
+        #         nums[i-snowball] = t
+        
