@@ -1,5 +1,6 @@
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
+        if len(s1)>len(s2): return False
         l, r = 0, len(s1)-1 
         a = [0]*150
         for i in map(ord, s1):
