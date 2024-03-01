@@ -1,34 +1,16 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        
-        stack = []
-        if (len(s)%2 != 0):
-            return False
-
-        for i in s:
-            if i == "(" or i == "{" or i == "[":
-                stack.append(i)
-            else:
-                if (len(stack) != 0):
-                    if (i == ")"):
-                        if stack[-1] == "(":
-                            stack.pop()
-                        else:
-                            return False
-                    elif (i == "}"):
-                        if stack[-1] == "{":
-                            stack.pop()
-                        else:
-                            return False
-                    elif (i == "]"):
-                        if stack[-1] == "[":
-                            stack.pop()
-                        else:
-                            return False
-                else: 
-                    return False
-        if (len(stack) != 0):
-            return False
-            
-        return True
-        
+        stack = [] 
+        for c in s:
+            if c in '([{':
+                stack.append(c)
+            else: 
+                if not stack or \
+                    (c == ')' and stack[-1] != '(') or \
+                    (c == '}' and stack[-1] != '{') or \
+                    (c == ']' and stack[-1] != '['):
+                    return False 
+                stack.pop() 
+        return not stack 
+        # if stack: (means there are elements)
+# so the string is valid, otherwise, there are unmatched opening brackets, so return false
