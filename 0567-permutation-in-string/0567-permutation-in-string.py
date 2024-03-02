@@ -1,18 +1,20 @@
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        if len(s1)>len(s2): return False
-        l, r = 0, len(s1)-1 
-        a = [0]*150
-        for i in map(ord, s1):
-            a[i] +=1
+        l, r = 0, len(s1)-1
+        a = [0]*26
+        for i in (s1):
+            a[ord(i) - ord('a')  ] = 1
         
-        while r < len(s2):
-            b= [0]*150 
-            for j in map(ord,s2[l:r+1]):
-                b[j] +=1
-            c = sum(1 for i in range(150) if a[i] == b[i])
-            if c == 150:
+        b = [0]*26
+        for i in (s2[l:r+1]):
+                b[ord(i) - ord('a') ] = 1
+        while r< len(s2):
+            c = sum(1 for j in range(26) if a[j] == b[j])
+            if c == 26:
                 return True
+            b[ord(s2[l]) - ord('a')] = 0
             l += 1
             r += 1
-        return False 
+            if r<len(s2):
+                b[ord(s2[r]) - ord('a')] = 1
+        return False
