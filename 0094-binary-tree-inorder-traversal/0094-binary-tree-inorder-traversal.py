@@ -7,7 +7,7 @@
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         st = []
-        res= []
+        res = []
         while root or st:
             while root:
                 st.append(root)
@@ -17,4 +17,3 @@ class Solution:
 
             root = root.right
         return res
-                
