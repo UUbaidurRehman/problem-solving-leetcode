@@ -1,7 +1,9 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
-        if n == 1:
-            return n
+        if n <= 2:
+            return 1
+        elif n== 3:
+            return 2
         num = n
         i = 1
         while i< (n//2)+1: # for i in range(1,n):
