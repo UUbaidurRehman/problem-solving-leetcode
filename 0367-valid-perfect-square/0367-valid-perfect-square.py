@@ -6,7 +6,7 @@ class Solution:
         r = num
         while (l<=r):
             mid = l + (r-l)//2
-            if mid == num/mid and num%mid==0:
+            if mid == num/mid :# and num%mid==0:
                 return True
             elif num > mid*mid :
                 l = mid +1
