@@ -13,4 +13,3 @@ class Solution:
             prev = curr
             curr =next_node
         return prev
-
